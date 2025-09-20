@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SEO & AI Tools Bundle – Premium Access</title>
+    <style>
+        :root {
+            --bg: #11005b;
+            --panel: #FFFFFF;
+            --card: #FFFFFF;
+            --ring: #FFFFFF;
+            --text: #FFFFFF;
+            --muted: #FFFFFF;
+            --brand: #00bef4;
+            --brand2: #FFFFFF;
+            --good: #FFFFFF;
+            --warn: #FFFFFF;
+            --danger: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(80% 60% at 20% 10%, rgba(79, 70, 229, .18), transparent), linear-gradient(180deg, rgba(110, 231, 255, .08), transparent 40%), var(--bg);
+            color: var(--text);
+            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial
+        }
+
+        a {
+            color: var(--brand);
+            text-decoration: none
+        }
+
+        .container {
+            width: min(1200px, 92vw);
+            margin-inline: auto
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01));
+            border: 1px solid rgba(110, 231, 255, .15);
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
+            backdrop-filter: blur(6px)
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .65rem;
+            padding: 10px 25px;
+            border: 1px solid rgba(110, 231, 255, .25);
+            border-radius: 50px;
+            color: #ffffff;
+            font-weight: 800;
+            cursor: pointer;
+            background: linear-gradient(90deg, var(--brand), #ff00cf);
+            box-shadow: 0 8px 30px rgba(110, 231, 255, .25);
+            transition: transform .18s ease, box-shadow .18s ease, filter .18s ease
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: saturate(1.1)
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--text);
+            border-color: var(--ring)
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--brand);
+            border-color: rgba(110, 231, 255, .35)
+        }
+
+        .btn.block {
+            width: 100%
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            padding: .35rem .6rem;
+            border-radius: 999px;
+            border: 1px dashed rgba(110, 231, 255, .35);
+            color: #e8f1ff;
+            background: rgba(16, 24, 48, .6);
+            font-size: .82rem
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        /* Sticky nav */
+        header.nav {
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            background: linear-gradient(180deg, rgba(7, 10, 20, .9), rgba(7, 10, 20, .6));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(110, 231, 255, .12)
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .8rem 0
+        }
+
+        /* Coupon bar */
+        .coupon-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .8rem;
+            padding: .5rem .8rem;
+            background: linear-gradient(90deg, rgba(110, 231, 255, .15), rgba(79, 70, 229, .18));
+            border-bottom: 1px solid rgba(110, 231, 255, .2)
+        }
+
+        .coupon-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            border: 1px dashed rgba(110, 231, 255, .45);
+            border-radius: 999px;
+            padding: .25rem .55rem;
+            background: rgba(12, 22, 44, .6)
+        }
+
+        .hero {
+            padding: 56px 0 22px
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5.5vw, 50px);
+            line-height: 1.05;
+            margin: 0 0 10px
+        }
+
+        .hero p {
+            margin: 0 0 16px;
+            color: #cfe3ff
+        }
+
+        .hero .img-wrap {
+            position: relative
+        }
+
+        .hero .img-wrap:after {
+            content: "";
+            position: absolute;
+            inset: -8px;
+            z-index: -1;
+            border-radius: 24px;
+            background: conic-gradient(from 140deg at 70% 10%, rgba(110, 231, 255, .25), rgba(79, 70, 229, .25), transparent 60%);
+            filter: blur(24px)
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr))
+        }
+
+        @media (max-width: 980px) {
+            .grid-3 {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .grid-4 {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .tile {
+            padding: 18px
+        }
+
+        .tile .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(180deg, rgba(110, 231, 255, .16), rgba(110, 231, 255, .06));
+            border: 1px solid rgba(110, 231, 255, .2)
+        }
+
+        details.toolcat {
+            border: 1px solid rgba(110, 231, 255, .18);
+            border-radius: 14px;
+            overflow: hidden
+        }
+
+        details.toolcat summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 1rem 1.1rem;
+            background: rgba(16, 28, 58, .8);
+            font-weight: 800
+        }
+
+        details.toolcat[open] summary {
+            background: rgba(24, 42, 78, .85)
+        }
+
+        .tools {
+            padding: 1rem 1.1rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: .6rem 1rem
+        }
+
+        .tools span{
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width:700px) {
+            .tools {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .tools span {
+            display: flex;
+            align-items: center;
+            gap: .55rem;
+            background: rgba(10, 18, 36, .75);
+            border: 1px solid rgba(110, 231, 255, .15);
+            padding: .55rem .65rem;
+            border-radius: .65rem
+        }
+
+        .marquee {
+            overflow: hidden;
+            border: 1px solid rgba(110, 231, 255, .12);
+            border-radius: 14px;
+            background: rgba(12, 20, 38, .6)
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 28px;
+            animation: scroll 24s linear infinite;
+            padding: 14px
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .logo {
+            padding: 8px 12px;
+            border: 1px solid rgba(110, 231, 255, .15);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, .02)
+        }
+
+        .pricing .plan {
+            padding: 18px;
+            transition: transform .18s ease, box-shadow .18s ease
+        }
+
+        .pricing .plan:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(79, 70, 229, .24)
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: .35rem
+        }
+
+        .price .amt {
+            font-size: 2.2rem;
+            font-weight: 900
+        }
+
+        .ribbon {
+            position: relative
+        }
+
+        .ribbon::after {
+            content: "Most Popular";
+            position: absolute;
+            top: -12px;
+            right: 14px;
+            background: linear-gradient(90deg, #ffd43b, #ff922b);
+            color: #1a1a1a;
+            font-weight: 900;
+            padding: .22rem .55rem;
+            border-radius: 999px;
+            font-size: .72rem;
+            border: 1px solid rgba(0, 0, 0, .15)
+        }
+
+        .quote {
+            font-style: italic;
+            color: #dbeafe
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(110, 231, 255, .25)
+        }
+
+        .float-cta {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 18px;
+            z-index: 65;
+            background: linear-gradient(90deg, var(--brand), #9ae6b4);
+            border: 1px solid rgba(255, 255, 255, .35);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, .3);
+            display: flex;
+            gap: .7rem;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 12px
+        }
+
+        .float-cta .hide {
+            display: none
+        }
+
+        footer {
+            padding: 28px 0;
+            color: #b9c7de;
+            border-top: 1px solid rgba(110, 231, 255, .12)
+        }
+
+        .anchor {
+            scroll-margin-top: 120px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- COUPON / COUNTDOWN BAR -->
+    <div class="coupon-bar" id="couponBar">
+        <span class="coupon-pill">⏱ <strong>Next price increase in</strong> <span id="nextTick">--:--:--</span></span>
+
+    </div>
+
+    <!-- NAV -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a href="#top" style="display:flex;align-items:center;gap:.6rem;font-weight:900;color:var(--text)"><span
+                    style="display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(180deg,#101b38,#0a1429);border:1px solid rgba(110,231,255,.18)">💎</span>
+                SEO & AI Tools Bundle</a>
+            <nav style="display:flex;gap:1rem;flex-wrap:wrap">
+                <a href="#features">Features</a>
+                <a href="#tools">100+ Tools</a>
+                <a href="#demo">Demo</a>
+                <a href="#pricing">Plans</a>
+                <a href="#get-access" class="btn" style="padding:.55rem .95rem">Get Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="top" class="hero container">
+        <div class="grid grid-2">
+            <div>
+                <span class="badge">⚡ Instant Activation • 💬 WhatsApp Support • ✅ Genuine Access</span>
+                <h1>Unlock <span
+                        style="background:linear-gradient(90deg,var(--brand),#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent">100+
+                        Premium SEO, AI & Creative Tools</span> at Student‑friendly prices</h1>
+                <p>Perfect for marketers, designers, video editors, students & agencies. One bundle, everything you
+                    need.</p>
+                <div style="margin-top:16px;display:flex;gap:.7rem;flex-wrap:wrap">
+                    <a href="#pricing" class="btn">See Plans</a>
+                    <a href="#demo" class="btn ghost">▶ Watch 45s Demo</a>
+                </div>
+            </div>
+            <div class="img-wrap">
+                <img src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Hero-Image-All-in-One-AI-tool-Bundle.webp"
+                    alt="SEO & AI tools"
+                    style="width:100%;height:100%;object-fit:cover;border-radius:22px;border:1px solid rgba(110,231,255,.2)" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF MARQUEE -->
+    <section class="container" style="padding:6px 0 22px">
+        <div class="marquee card">
+            <div class="marquee-track">
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/b9rfmxmyhiwzqi7fl9w2.webp" alt="Semrush"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/canva.webp" alt="Canva"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/grammarly.webp" alt="Grammarly"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/motion_arra.webp" alt="MotionArray"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/envato.webp" alt="Envato"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/coursera.webp" alt="Coursera"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/pswcj9ngff99ovmyv8um.webp" alt="Udemy"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/k1vh9edlpjj4sytugcaf.webp" alt="SkillShare"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Figma.webp" alt="Figma"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Jasper.webp" alt="Jasper"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/freepik.webp" alt="FreePik"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/rvcds0kt2lcp3ljkh9cn.webp" alt="Placeit"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/capcut.webp" alt="Capcut"></div>
+                <div class="logo"><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Helium10.webp" alt="Helium10"></div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="container anchor" style="padding:10px 0 10px">
+        <div class="grid grid-3">
+            <div class="card tile">
+                <div class="icon">🛡</div>
+                <h3 style="margin:.4rem 0">Premium Access</h3>
+                <p class="muted">Single bundle with 100+ verified tools.</p>
+            </div>
+            <div class="card tile">
+                <div class="icon">⚡</div>
+                <h3 style="margin:.4rem 0">Instant Activation</h3>
+                <p class="muted">Access right after payment & WhatsApp verification.</p>
+            </div>
+            <div class="card tile">
+                <div class="icon">🎧</div>
+                <h3 style="margin:.4rem 0">24×7 Support</h3>
+                <p class="muted">Real humans on WhatsApp to help you fast.</p>
+            </div>
+            <div class="card tile">
+                <div class="icon">🔁</div>
+                <h3 style="margin:.4rem 0">Auto Renewal</h3>
+                <p class="muted">No-hassle renewals for ongoing work.</p>
+            </div>
+            <div class="card tile">
+                <div class="icon">🆕</div>
+                <h3 style="margin:.4rem 0">Replacement</h3>
+                <p class="muted">New account if suspended – no extra cost.</p>
+            </div>
+            <div class="card tile">
+                <div class="icon">⭐</div>
+                <h3 style="margin:.4rem 0">200+ Happy Clients</h3>
+                <p class="muted">Creators, students & agencies use us daily.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools" class="container anchor" style="padding:22px 0">
+        <h2 style="margin:0 0 10px">Browse the 100+ Tools</h2>
+        <p class="muted" style="margin-top:-4px">Expand each category and see what’s inside.</p>
+        <div class="grid" style="margin-top:14px">
+            <details class="toolcat" open>
+                <summary>📊 SEO & Research</summary>
+                <div class="tools">
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/b9rfmxmyhiwzqi7fl9w2.webp" alt="semrush"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/moz-68cc2304e9d3b.webp" alt="MOZ"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/ubersuggest-68cc23077f9f5.webp" alt="Ubersuggest"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/similarweb-68cc2306f2509.webp" alt="similarweb"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/mangtools-68cc230451704.webp" alt="Mangools"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/seo-optimer-68cc23064ce51.webp" alt="SEOOptimer"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/junglescout-68cc23037975b.webp" alt="JungleScout"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Helium10.webp" alt="Helium10"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/sellthetrend-68cc23059be13.webp" alt="Sell The Trend"></span>
+                    <span> <img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/viral-launch-68cc2307a7655.webp" alt="ViralLaunch"></span>
+                    <span> <img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/woorank-68cc23085b7c2.webp" alt="woorank"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/seo-site-checkup-68cc2305e461a.webp" alt="seo site checkup"></span>
+                    <span> <img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/indexification-68cc230367f04.webp" alt="indexification"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/niche-scrapper-68cc23050caec.webp" alt="Niche scrapper"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/seobility-68cc230698746.webp" alt="seoability"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/links-indexer-68cc230429510.webp" alt="LinksINdexer"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/wordtracker-68cc2308c77f0.webp" alt="wordtracker"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/answer-the-public-68cc2302be3f9.webp" alt="answer-the-public"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/buzzstream-68cc23027cab3.webp" alt="buzz-stream"></span>
+                </div>
+            </details>
+            <details class="toolcat">
+                <summary>🤖 AI-Powered Content & Writing</summary>
+                <div class="tools">
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/chatgpt.webp" alt="chatgpt"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Jasper.webp" alt="jasper"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/grammarly.webp" alt="grammarly"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/quillbot.webp" alt="quillbot"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/you.com_.webp" alt="you.com"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/perplexity.webp" alt="perplexity"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/blackbox-ai.webp" alt="blackboxai"></span>
+                    <span><img  width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/linguix.webp" alt="linguix"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/wordtune.webp" alt="wordtune"></span>
+                    <span><img  width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/closers-copy.webp" alt="closercopy"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/hix-ai.webp" alt="hixai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/stealth-writer.webp" alt="stealth writer"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/cramly.webp" alt="cramly"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/scite.webp" alt="sciteai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/jenni.webp" alt="jenniai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/quetext.webp" alt="quetext"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/wordcounter.webp" alt="word counter"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/creatify-ai.webp" alt="creatify"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/writerzen.webp" alt="writerzen"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/word-ai.webp" alt="wordai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/jarvis.webp" alt="jarvis"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/copyscape.webp" alt="COPYSCAPE"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/icebio.webp" alt="icebio"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/one-click-article-creator.webp" alt="one click article creator"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/write-human.webp" alt="writehuman"></span>
+                </div>
+            </details>
+            <details class="toolcat">
+                <summary>🎨 Professional Design & Creative</summary>
+                <div class="tools">
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/canva.webp" alt="canva pro"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Figma.webp" alt="figma"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/leonardo.webp" alt="leanardo ai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/rvcds0kt2lcp3ljkh9cn.webp" alt="place it"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/vistacreate.webp" alt="vista create"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/picsart.webp" alt="picsart"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/photoroom.webp" alt="photoroom"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Uizard.webp" alt="UIzardIO"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/prezi.webp" alt="prez ai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/designs-ai.webp" alt="design ai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/pic-monkey.webp" alt="pic monkey"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/foto-jet.webp" alt="fotojet"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/Icons8.webp" alt="icons8"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/vidtoonz.webp" alt="vidtoons"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/artistly.webp" alt="artistly"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/design-beast.webp" alt="design beast"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/slidebeam.webp" alt="slide bean"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/ai-studios.webp" alt="ai studios"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/gamma.webp" alt="gamma ai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/slideshare.webp" alt="slideshare"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/beautifulai.webp" alt="beautiful ai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/sketch_genius.webp" alt="sketchgenius"></span>
+                </div>
+            </details>
+            <details class="toolcat">
+                <summary>🎥 Video Production & Editing</summary>
+                <div class="tools">
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/motion_arra.webp" alt="MotionArray"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/capcut.webp" alt="Capcut"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/vidIQ.webp" alt="VidIQ Boost"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/fomoclips.webp" alt="Fomoclips"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/storybase.webp" alt="Storybase"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/humanpal.webp" alt="Humanpal Ai"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/toonzai.webp" alt="Toons AI"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/sora-openai.webp" alt="Sora"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/epidemic-sound.webp" alt="Epidemic Sound"></span>
+                </div>
+            </details>
+            <details class="toolcat">
+                <summary>🎓 Learning & Development</summary>
+                <div class="tools">
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/pswcj9ngff99ovmyv8um.webp" alt="Udemy"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/k1vh9edlpjj4sytugcaf.webp" alt="SkillShare"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/coursera.webp" alt="Coursera"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/edx.webp" alt="EDX"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/scribd.webp" alt="Scribd"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/everlane.webp" alt="Everland"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/duolingo.webp" alt="Duolingo"></span>
+                </div>
+            </details>
+            <details class="toolcat">
+                <summary>📸 Premium Stock & Media Resources</summary>
+                <div class="tools">
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/envato.webp" alt="Envato Elements"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/adobestock-downloader.webp" alt="Adobe Stock Downloader"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/gettyimages-downloader.webp" alt="GettyImages"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/artistly.webp" alt="Artlist Downloader"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/shutterstock-downloader.webp" alt="Shutterstock downloader"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/storyblocks.webp" alt="StoryBlocks"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/istock-downloader.webp" alt="istock images"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/istock.webp" alt="istock video downloader"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/alamy.webp" alt="Alamy"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/freepik-1.webp" alt="freepik downlader"></span>
+                </div>
+            </details>
+            <details class="toolcat">
+                <summary>🎬 Entertainment & Extras</summary>
+                <div class="tools">
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/netflix.webp" alt="Netfix"></span>
+                    <span><img width="150px" src="https://dvtools.desirevalley.in/wp-content/uploads/2025/09/amazon-prime.webp" alt="Prime Video"></span>
+                    <span>🎁 and many more bonus gifts!</span>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- DEMO -->
+    <section id="demo" class="container anchor" style="padding:6px 0 22px">
+        <h2 style="margin:0 0 12px">See it in action (45s)</h2>
+        <div class="card" style="overflow:hidden">
+            <div style="position:relative;padding-bottom:56.25%;height:0"><iframe
+                    src="https://www.youtube.com/embed/bvKsYXsSkcI" title="Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen style="position:absolute;inset:0;border:0;width:100%;height:100%"></iframe></div>
+        </div>
+    </section>
+
+    <!-- PRICING (dynamic) -->
+    <section id="pricing" class="container anchor" style="padding:6px 0 22px">
+        <h2 style="margin:0 0 10px">Pick your plan</h2>
+        <p class="muted" style="margin-top:-4px">Great Savings with Every Plan with 24x7* Help Support</p>
+        <div class="grid grid-4 pricing" style="margin-top:12px">
+            <div class="card plan">
+                <h3 style="margin:.2rem 0">1 Month</h3>
+                <div class="price">₹ <span class="amt" data-plan="1 Month">199</span></div>
+                <ul class="muted" style="margin:.4rem 0 1rem;padding-left:1rem; list-style-type: none;">
+                    <li><i class="fa-solid fa-bolt"></i> Get everything instantly</li>
+                    <li><i class="fa-solid fa-user"></i> Instant Account Activation</li>
+                    <li><i class="fa-solid fa-thumbs-up"></i> Easy to start, no commitment</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> Fast help on WhatsApp</li>
+                    <li><i class="fa-solid fa-graduation-cap"></i> Perfect for school assignments</li>
+                    <li><i class="fa-solid fa-lock"></i> Safe and secure login</li>
+                </ul><button class="btn block pick-plan" data-plan="1 Month">Choose 1 Month</button>
+                <div style="text-align: center; padding: 5px;"><i class="fa-solid fa-lock" style="color:green"></i>100% Secure Payment</div>
+
+            </div>
+            <div class="card plan ribbon">
+                <h3 style="margin:.2rem 0">3 Months</h3>
+                <div class="price">₹ <span class="amt" data-plan="3 Months">399</span></div>
+                <ul class="muted" style="margin:.4rem 0 1rem;padding-left:1rem; list-style-type: none;">
+                    <li><i class="fa-solid fa-indian-rupee-sign"></i> Best value, save money</li>
+                    <li><i class="fa-solid fa-bolt"></i> Instant Account Activation</li>
+                    <li><i class="fa-solid fa-rotate"></i> Auto renewal, Never lose access</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> Priority Help Support on WhatsApp</li>
+                    <li><i class="fa-solid fa-brain"></i></i> Un-metered Access to All AI Tools</li>
+                    <li><i class="fa-solid fa-lock"></i> Safe and secure login</li>
+                </ul><button class="btn block pick-plan" data-plan="3 Months">Choose 3 Months</button>
+                <div style="text-align: center; padding: 5px;"><i class="fa-solid fa-lock" style="color:green"></i>100% Secure Payment</div>
+
+            </div>
+            <div class="card plan">
+                <h3 style="margin:.2rem 0">6 Months</h3>
+                <div class="price">₹ <span class="amt" data-plan="6 Months">599</span></div>
+                <ul class="muted" style="margin:.4rem 0 1rem;padding-left:1rem; list-style-type: none;">
+                    <li><i class="fa-solid fa-indian-rupee-sign"></i> Super Saver Pack for Long term</li>
+                    <li><i class="fa-solid fa-bolt"></i> Instant Account Activation</li>
+                    <li><i class="fa-solid fa-user"></i> Instant Account Replacement</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> VIP WhatsApp Chat Support</li>
+                    <li><i class="fa-solid fa-infinity"></i> Un-metered Access to All AI Tools</li>
+                    <li><i class="fa-solid fa-star-of-life"></i> Get new tools for free* </li>
+                    <li><i class="fa-solid fa-lock"></i> Safe and secure login</li>
+                </ul><button class="btn block pick-plan" data-plan="6 Months">Choose 6 Months</button>
+                <div style="text-align: center; padding: 5px;"><i class="fa-solid fa-lock" style="color:green"></i>100% Secure Payment</div>
+
+            </div>
+            <div class="card plan">
+                <h3 style="margin:.2rem 0">12 Months</h3>
+                <div class="price">₹ <span class="amt" data-plan="12 Months">999</span></div>
+                <ul class="muted" style="margin:.4rem 0 1rem;padding-left:1rem; list-style-type: none;">
+                    <li><i class="fa-solid fa-building"></i> Best for agencies, long term plan</li>
+                    <li><i class="fa-solid fa-bolt"></i> Instant Account Activation</li>
+                    <li><i class="fa-solid fa-rotate"></i> Auto renewal, Never lose access</li>
+                    <li><i class="fa-solid fa-user"></i> Instant Account Replacement</li>
+                    <li><i class="fa-solid fa-cloud-arrow-up"></i> Get All Future Updates for FREE</li>
+                    <li><i class="fa-solid fa-headphones"></i> Dedicated One-to-One Call Support</li>
+                    <li><i class="fa-solid fa-infinity"></i> Un-metered Access to All AI Tools</li>
+                    <li><i class="fa-solid fa-lock"></i> Safe and secure login</li>
+                </ul><button class="btn block pick-plan" data-plan="12 Months">Choose 12 Months</button>
+                <div style="text-align: center; padding: 5px;"><i class="fa-solid fa-lock" style="color:green"></i>100% Secure Payment</div>
+            </div>
+        </div>
+
+        <div class="card"
+            style="margin-top:16px;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;padding:14px 16px">
+            <div>
+                <div class="muted" style="font-weight:700">Pay via Google Pay</div>
+                <div style="font-size:1.35rem;font-weight:900;letter-spacing:.5px">9628815001</div>
+            </div>
+            <a href="#get-access" class="btn">Get Access on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="container" style="padding:6px 0 22px">
+        <div class="grid grid-3">
+            <div class="card" style="padding:16px">
+                <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem"><img class="avatar"
+                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+                        alt="" /><strong>Rahul M.</strong><span class="muted">Marketer</span></div>
+                <div class="quote">“Got Canva, Semrush and Jasper in one place. Activation was instant.”</div>
+            </div>
+            <div class="card" style="padding:16px">
+                <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem"><img class="avatar"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+                        alt="" /><strong>Priya S.</strong><span class="muted">Designer</span></div>
+                <div class="quote">“Great support on WhatsApp. My account was replaced within minutes.”</div>
+            </div>
+            <div class="card" style="padding:16px">
+                <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem"><img class="avatar"
+                        src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=200&auto=format&fit=crop"
+                        alt="" /><strong>Aman K.</strong><span class="muted">Student</span></div>
+                <div class="quote">“For students, this pricing is a steal. Highly recommended.”</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA IMAGE -->
+    <section class="container" style="padding:6px 0 22px">
+        <a href="#pricing"><img
+                src="https://images.unsplash.com/photo-1529336953121-a83372e8a4cd?q=80&w=1400&auto=format&fit=crop"
+                alt="View Plans" style="width:100%;border-radius:14px;border:1px dashed rgba(110,231,255,.18)" /></a>
+    </section>
+
+    <!-- WA FORM SECTION (SHORTCODE) -->
+    <section id="get-access" class="container anchor" style="padding:6px 0 40px">
+        <h2 style="margin:0 0 10px">Get Access on WhatsApp</h2>
+        <p class="muted" style="margin-top:-4px">Upload your payment screenshot, pick a plan, and message us on WhatsApp
+            to activate instantly.</p>
+        <div class="card" style="padding:14px 16px;border-style:dashed">
+
+            <div
+                style="background:rgba(12,20,38,.6);border:1px solid rgba(110,231,255,.18);padding:.6rem;border-radius:.6rem;margin-top:.5rem">
+                [wa_screenshot_uploader]</div>
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" style="padding:6px 0 34px">
+        <h2 style="margin:0 0 10px">FAQs</h2>
+        <div class="grid grid-2">
+            <details class="card" style="padding:12px">
+                <summary style="cursor:pointer;font-weight:800;padding:8px 6px">How fast is activation?</summary>
+                <div class="muted" style="padding:0 6px 8px">Usually within minutes after you send the WhatsApp message
+                    with your payment screenshot.</div>
+            </details>
+            <details class="card" style="padding:12px">
+                <summary style="cursor:pointer;font-weight:800;padding:8px 6px">What if an account is suspended?
+                </summary>
+                <div class="muted" style="padding:0 6px 8px">We’ll replace accounts quickly so you can keep working.
+                </div>
+            </details>
+            <details class="card" style="padding:12px">
+                <summary style="cursor:pointer;font-weight:800;padding:8px 6px">Can I upgrade my plan later?</summary>
+                <div class="muted" style="padding:0 6px 8px">Yes, pay the difference and we’ll extend your access.</div>
+            </details>
+            <details class="card" style="padding:12px">
+                <summary style="cursor:pointer;font-weight:800;padding:8px 6px">Do you offer support?</summary>
+                <div class="muted" style="padding:0 6px 8px">Yes, 24×7 on WhatsApp for activation and usage queries.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container"
+            style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between">
+            <div class="muted">© 2025 Vishal Verma • All rights reserved.</div>
+            <div class="muted">WhatsApp: <a href="https://wa.me/919628815001" target="_blank" rel="noopener">+91 96288
+                    15001</a></div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA (appears after scroll) -->
+    <div id="floatCta" class="float-cta" style="display:none">
+        <strong>Price goes up ₹1/hr</strong>
+        <a href="#pricing" class="btn" style="padding:.5rem .8rem">See Plans</a>
+        <a href="#get-access" class="btn ghost" style="padding:.5rem .8rem">Get Access</a>
+    </div>
+
+    <script>
+        // ===== CONFIG =====
+        // Set the moment your pricing started (IST). Change to your real start date if needed.
+        const PRICE_START_ISO = '2025-09-17T00:00:00+05:30';
+        const BASE = { '1 Month': 199, '3 Months': 399, '6 Months': 599, '12 Months': 999, 'Trial': 49, 'Lifetime': 4999 };
+        const HOURLY_INCREMENT = 1; // ₹1 per hour
+        const COUPON_CODE = 'LAUNCH50';
+        const COUPON_OFF = 50; // ₹50 off when applied
+
+        // ===== HELPERS =====
+        const $ = (s, root = document) => root.querySelector(s);
+        const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
+        const startMs = Date.parse(PRICE_START_ISO);
+        function hoursSinceStart(nowMs = Date.now()) { return Math.max(0, Math.floor((nowMs - startMs) / 3600000)); }
+        function nextTickMs(nowMs = Date.now()) { const h = hoursSinceStart(nowMs) + 1; return startMs + h * 3600000; }
+        function fmt(t) { const s = Math.max(0, Math.floor(t / 1000)); const hh = String(Math.floor(s / 3600)).padStart(2, '0'); const mm = String(Math.floor((s % 3600) / 60)).padStart(2, '0'); const ss = String(s % 60).padStart(2, '0'); return ${ hh }:${ mm }:${ ss }; }
+
+        // Coupon state in localStorage
+        const COUPON_KEY = 'wa_coupon_applied_v1';
+        let couponApplied = localStorage.getItem(COUPON_KEY) === '1';
+
+        function dynamicPrice(plan) {
+            const bump = hoursSinceStart() * HOURLY_INCREMENT;
+            let p = (BASE[plan] || 0) + bump;
+            if (couponApplied) p = Math.max(1, p - COUPON_OFF);
+            return p;
+        }
+
+        function refreshPrices() {
+            $$('.amt').forEach(span => {
+                const plan = span.getAttribute('data-plan');
+                span.textContent = dynamicPrice(plan);
+            });
+        }
+
+        function tickCountdown() {
+            const remain = nextTickMs() - Date.now();
+            const el = $('#nextTick');
+            if (el) el.textContent = fmt(remain);
+            if (remain <= 0) {
+                refreshPrices();
+                applyPricesToPlugin();
+            }
+            requestAnimationFrame(() => setTimeout(tickCountdown, 250));
+        }
+
+        function markCouponUI() {
+            const btn = $('#applyCoupon');
+            const code = $('#couponCode');
+            if (!btn || !code) return;
+            if (couponApplied) {
+                btn.textContent = 'Coupon Applied';
+                btn.classList.add('ghost');
+                code.parentElement.style.opacity = 1;
+            } else {
+                btn.textContent = 'Apply Coupon';
+                btn.classList.remove('ghost');
+            }
+        }
+
+        function applyPricesToPlugin() {
+            // If the shortcode plugin is present, update WASU.plans so QR & amount use dynamic prices
+            if (typeof window.WASU === 'object' && window.WASU.plans) {
+                const plans = window.WASU.plans;
+                ['1 Month', '3 Months', '6 Months', '12 Months', 'Trial', 'Lifetime'].forEach(k => {
+                    if (k in plans) plans[k] = dynamicPrice(k);
+                });
+                // Trigger update for currently selected plan
+                const select = document.querySelector('#wa-uploader #plan');
+                if (select) { select.dispatchEvent(new Event('change', { bubbles: true })); }
+            }
+        }
+
+        // Smooth scroll
+        $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const id = a.getAttribute('href'); const el = $(id); if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); } }));
+
+        // Plan -> preselect in shortcode form and sync prices
+        function setPlanInForm(plan) {
+            const select = $('#wa-uploader #plan');
+            if (select) { select.value = plan; select.dispatchEvent(new Event('change', { bubbles: true })); }
+            const formSec = $('#get-access'); if (formSec) formSec.scrollIntoView({ behavior: 'smooth' });
+        }
+        $$('.pick-plan').forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); setPlanInForm(btn.dataset.plan); applyPricesToPlugin(); }));
+
+        // Floating CTA show/hide
+        const float = $('#floatCta'); const hero = $('.hero');
+        const io = new IntersectionObserver(([ent]) => { if (float) float.style.display = ent.isIntersecting ? 'none' : 'flex'; }, { threshold: .1 });
+        if (hero) io.observe(hero);
+
+        // Coupon logic
+        $('#applyCoupon')?.addEventListener('click', () => {
+            couponApplied = true; localStorage.setItem(COUPON_KEY, '1');
+            markCouponUI(); refreshPrices(); applyPricesToPlugin();
+            // Scroll to pricing to nudge conversion
+            $('#pricing')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Initial paint
+        markCouponUI(); refreshPrices(); applyPricesToPlugin(); tickCountdown();
+    </script>
+</body>
+
+</html>
